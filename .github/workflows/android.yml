@@ -1,0 +1,20 @@
+name: Build Android APK
+
+on: 
+  push:
+    branches: [ main ]
+
+jobs:
+  build-android:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Show files
+      run: |
+        echo "=== Вот что есть в репозитории ==="
+        ls -la
+        echo "=== Python файлы ==="
+        find . -name "*.py" | head -5
